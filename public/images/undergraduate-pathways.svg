@@ -1,0 +1,39 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Undergraduate students in a future-ready learning space</title>
+  <desc id="desc">An illustrated university scene with students, programme cards, and a warm academic campus atmosphere.</desc>
+  <rect width="900" height="720" fill="#FFF4DF"/>
+  <path d="M0 0H900V212C735 178 596 189 482 244C324 320 177 299 0 239V0Z" fill="#11634F"/>
+  <path d="M0 488C145 422 284 410 417 452C551 494 708 489 900 421V720H0V488Z" fill="#172033"/>
+  <circle cx="757" cy="142" r="74" fill="#F8A51B"/>
+  <circle cx="757" cy="142" r="42" fill="#FFD77E"/>
+  <rect x="92" y="149" width="716" height="422" rx="42" fill="#FFFFFF"/>
+  <rect x="127" y="188" width="646" height="344" rx="30" fill="#F7EFE2"/>
+  <rect x="158" y="221" width="267" height="178" rx="24" fill="#FFFFFF"/>
+  <rect x="185" y="254" width="126" height="14" rx="7" fill="#11634F"/>
+  <rect x="185" y="286" width="202" height="12" rx="6" fill="#D7E7DD"/>
+  <rect x="185" y="316" width="170" height="12" rx="6" fill="#D7E7DD"/>
+  <rect x="185" y="356" width="116" height="31" rx="15.5" fill="#F8A51B"/>
+  <rect x="459" y="221" width="282" height="69" rx="20" fill="#FFFFFF"/>
+  <rect x="489" y="247" width="50" height="16" rx="8" fill="#D94B3D"/>
+  <rect x="562" y="247" width="136" height="16" rx="8" fill="#D7E7DD"/>
+  <rect x="459" y="314" width="282" height="69" rx="20" fill="#FFFFFF"/>
+  <rect x="489" y="340" width="50" height="16" rx="8" fill="#11634F"/>
+  <rect x="562" y="340" width="136" height="16" rx="8" fill="#D7E7DD"/>
+  <rect x="459" y="407" width="282" height="69" rx="20" fill="#FFFFFF"/>
+  <rect x="489" y="433" width="50" height="16" rx="8" fill="#F8A51B"/>
+  <rect x="562" y="433" width="136" height="16" rx="8" fill="#D7E7DD"/>
+  <path d="M132 525C171 476 220 452 279 454C340 456 386 481 419 528" stroke="#F8A51B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M614 525C650 478 696 454 752 454C807 454 848 475 875 517" stroke="#D94B3D" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="289" cy="448" r="46" fill="#D94B3D"/>
+  <path d="M246 523C253 486 272 467 304 467C335 467 354 486 361 523H246Z" fill="#172033"/>
+  <circle cx="737" cy="448" r="46" fill="#11634F"/>
+  <path d="M694 523C701 486 720 467 752 467C783 467 802 486 809 523H694Z" fill="#172033"/>
+  <circle cx="516" cy="515" r="54" fill="#F8A51B"/>
+  <path d="M456 610C466 556 493 529 536 529C580 529 607 556 617 610H456Z" fill="#11634F"/>
+  <path d="M367 148L450 107L533 148L450 190L367 148Z" fill="#172033"/>
+  <path d="M414 171V224C437 240 463 240 486 224V171" stroke="#172033" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M533 148V210" stroke="#172033" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="533" cy="224" r="13" fill="#F8A51B"/>
+  <path d="M78 116L111 82L143 116L111 149L78 116Z" fill="#D94B3D"/>
+  <path d="M803 567L835 534L868 567L835 600L803 567Z" fill="#F8A51B"/>
+</svg>

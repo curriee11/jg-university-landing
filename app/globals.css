@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fffaf1;
+  color: #172033;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+::selection {
+  background: rgba(248, 165, 27, 0.32);
+}
+
+.section-shell {
+  margin-inline: auto;
+  width: min(1120px, calc(100% - 32px));
+}
+
+.glass-nav {
+  background: rgba(255, 250, 241, 0.82);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(23, 32, 51, 0.08);
+}
+
+.hero-mask {
+  background:
+    linear-gradient(90deg, rgba(23, 32, 51, 0.92) 0%, rgba(23, 32, 51, 0.74) 42%, rgba(23, 32, 51, 0.18) 100%),
+    linear-gradient(0deg, rgba(23, 32, 51, 0.32), rgba(23, 32, 51, 0.12));
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(23, 32, 51, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 32, 51, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.partner-track {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
