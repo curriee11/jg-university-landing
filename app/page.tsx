@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -15,15 +18,32 @@ import {
   ShieldCheck,
   Sparkles,
   UsersRound,
+  X,
 } from "lucide-react";
 
 const navItems = ["About", "Programs", "Campus", "Stories", "Contact"];
 
 const stats = [
-  { value: "1965", label: "education legacy" },
-  { value: "17+", label: "colleges managed by ACT" },
-  { value: "UGC", label: "approved university" },
-  { value: "24/7", label: "learning support mindset" },
+  {
+    value: "1965",
+    label: "Education legacy",
+    text: "Decades of trust through ASIA Charitable Trust institutions.",
+  },
+  {
+    value: "17+",
+    label: "Institutes managed",
+    text: "A broad academic ecosystem supporting diverse career paths.",
+  },
+  {
+    value: "UGC",
+    label: "Approved university",
+    text: "Recognized credentials for learners and employers.",
+  },
+  {
+    value: "24/7",
+    label: "Learning mindset",
+    text: "Digital-first support for ambitious, self-driven students.",
+  },
 ];
 
 const programs = [
@@ -146,43 +166,82 @@ export default function Home() {
 }
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-4">
-      <nav className="glass-nav mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 shadow-soft sm:px-6">
-        <a href="#" className="flex items-center gap-3" aria-label="JG University home">
-          <span className="flex size-10 items-center justify-center rounded-full bg-ink text-sm font-black tracking-tight text-white">
-            JG
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-black tracking-wide text-ink">JG University</span>
-            <span className="hidden text-xs font-medium text-ink/60 sm:block">Ahmedabad</span>
-          </span>
-        </a>
-        <div className="hidden items-center gap-7 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-sm font-semibold text-ink/70 transition hover:text-campus-green"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-2">
+      <nav className="glass-nav mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-4 shadow-soft sm:px-6 lg:rounded-full">
+        <div className="flex h-16 items-center justify-between">
           <a
-            href="#contact"
-            className="hidden h-10 items-center gap-2 rounded-full bg-campus-green px-5 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-ink sm:flex"
+            href="#"
+            className="flex items-center gap-3"
+            aria-label="JG University home"
+            onClick={() => setIsOpen(false)}
           >
-            Apply Now <ArrowRight size={16} />
+            <span className="flex size-10 items-center justify-center rounded-full bg-ink text-sm font-black tracking-tight text-white">
+              JG
+            </span>
+            <span className="leading-tight">
+              <span className="block text-sm font-black tracking-wide text-ink">JG University</span>
+              <span className="hidden text-xs font-medium text-ink/60 sm:block">Ahmedabad</span>
+            </span>
           </a>
-          <button
-            className="flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink lg:hidden"
-            type="button"
-            aria-label="Open navigation menu"
-          >
-            <Menu size={20} />
-          </button>
+          <div className="hidden items-center gap-7 lg:flex">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-sm font-semibold text-ink/70 transition hover:text-campus-green"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <a
+              href="#contact"
+              className="hidden h-10 items-center gap-2 rounded-full bg-campus-green px-5 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-ink sm:flex"
+              onClick={() => setIsOpen(false)}
+            >
+              Apply Now <ArrowRight size={16} />
+            </a>
+            <button
+              className="flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition hover:border-campus-green/30 hover:bg-campus-green/5 lg:hidden"
+              type="button"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((open) => !open)}
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+        <div
+          className={`grid transition-all duration-300 lg:hidden ${
+            isOpen ? "grid-rows-[1fr] pb-4 opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="min-h-0 overflow-hidden">
+            <div className="grid gap-2 border-t border-ink/10 pt-3">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="rounded-2xl px-3 py-3 text-sm font-bold text-ink/72 transition hover:bg-campus-green/10 hover:text-campus-green"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="mt-1 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-campus-green px-5 text-sm font-black text-white shadow-glow"
+                onClick={() => setIsOpen(false)}
+              >
+                Apply Now <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -214,13 +273,13 @@ function Hero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a
               href="#programs"
-              className="inline-flex h-13 items-center justify-center gap-2 rounded-full bg-saffron px-7 text-base font-black text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-saffron px-7 text-base font-black text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-white"
             >
               Explore Programs <ArrowRight size={19} />
             </a>
             <a
               href="#about"
-              className="inline-flex h-13 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 text-base font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-ink"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 text-base font-bold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white hover:text-ink"
             >
               Watch Vision <CirclePlay size={19} />
             </a>
@@ -230,11 +289,19 @@ function Hero() {
       <div className="section-shell relative -mt-24 pb-12">
         <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-soft ring-1 ring-ink/5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="border-b border-ink/10 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0">
-              <div className="text-3xl font-black text-campus-green">{stat.value}</div>
-              <div className="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-ink/52">
+            <div
+              key={stat.label}
+              className="min-h-44 border-b border-ink/10 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0"
+            >
+              <div className="text-4xl font-black leading-none text-campus-green sm:text-5xl">
+                {stat.value}
+              </div>
+              <div className="mt-5 text-sm font-black uppercase tracking-[0.16em] text-ink">
                 {stat.label}
               </div>
+              <p className="mt-4 max-w-64 rounded-2xl bg-[#fff1d6] px-4 py-3 text-[15px] font-bold leading-6 text-ink/75 ring-1 ring-saffron/25">
+                {stat.text}
+              </p>
             </div>
           ))}
         </div>
